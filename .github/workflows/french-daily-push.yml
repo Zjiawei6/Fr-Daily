@@ -24,10 +24,8 @@ jobs:
           pip install requests beautifulsoup4
       
       - name: Run French Daily Script
-        env:
-          SERVERCHAN_SEND_KEY: ${{ secrets.SERVERCHAN_SEND_KEY }}
         run: |
-          python scripts/french_daily.py
+          SERVERCHAN_SEND_KEY=SCT316452T8iZnGeYxTOGtGEMC2JXszrTD python scripts/french_daily.py
       
       - name: Upload logs on failure
         if: failure()
